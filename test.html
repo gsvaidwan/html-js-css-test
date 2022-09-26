@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>W2UI Demo: form/1</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.css" />
+</head>
+<body>
+
+<div id="form" style="width: 750px">
+    <div class="w2ui-page page-0">
+        <div class="w2ui-column col-0">
+            <div class="w2ui-field w2ui-span6">
+                <label>First Name</label>
+                <div>
+                    <input class="w2ui-input" id="first_name" name="first_name" style="width: 300px" tabindex="1" type="text"/>
+                </div>
+            </div>
+            <div class="w2ui-field w2ui-span6">
+                <label>Last Name</label>
+                <div>
+                    <input class="w2ui-input" id="last_name" name="last_name" style="width: 300px" tabindex="2" type="text"/>
+                </div>
+            </div>
+            <div class="w2ui-field w2ui-span6">
+                <label>Comments</label>
+                <div>
+                    <textarea class="w2ui-input" id="comments" name="comments" style="width: 300px; height: 60px" tabindex="3"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w2ui-buttons">
+        <button class="w2ui-btn" name="Reset" tabindex="4" onclick="w2ui.form.clear()">Reset</button>
+        <button class="w2ui-btn w2ui-btn-blue" name="Save" tabindex="5" onclick="w2ui.form.save()">Save</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+// this function triggers on document.ready
+query(() => {
+    let form = new w2form({
+        box: '#form',
+        name: 'form',
+        url: 'server/post',
+        record: {
+            first_name: 'John',
+            last_name: 'Doe'
+        },
+        formHTML: query('#form').html(),
+        fields: [
+            { field: 'first_name', type: 'text', required: true },
+            { field: 'last_name',  type: 'text', required: true },
+            { field: 'comments',   type: 'text'}
+        ],
+        actions: {
+            reset() {
+                this.clear();
+            },
+            save() {
+                this.save();
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>
