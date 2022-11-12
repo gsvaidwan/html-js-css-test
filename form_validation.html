@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Name:<input type="text" id="uname"/> <b id="nameError">* (mandatory)</b><br><br>
+        <button type="button" onclick="valifatedata()">Submit</button>
+    </form>
+    <script>
+        document.getElementById('uname').addEventListener("focusout",validdatedata);
+        function validdatedata()
+        {
+            var ptrn= /[a-zA-Z\s]+$/;
+        }
+    </script>
+
+    First Name: <input type="text" onkeydown="return /[a-zA-Z]$/,test(event.key)" id="name"><br/>
+   
+    
+    <div class="dropdown">
+        <button class="button" onclick="dop()">Drop Down</button>
+        <div id="drop-content" style="display: none;">
+            <a href="#">Item 1</a>
+            <a href="#">Item 1</a>
+            <a href="#">Item 1</a>
+            <a href="#">Item 1</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var click=
+
+    </script>
+</body>
+</html>

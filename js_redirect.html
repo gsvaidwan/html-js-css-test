@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--for print menthod -->
+    <button onclick="print()">Print this page</button>
+
+    <!-- for redirect to another page via href or replace -->
+    <button onclick="redirect()">Go to Facebook</button>
+    <script type="text/javascript">
+        function redirect(){
+            //location.href="https://facebook.com" 
+            location.replace("https://facebook.com")
+        }
+    </script>
+
+    <br><br><br><br>
+    <!-- for set timer & clear timer on button event-->
+        <button onclick="s=setTimeout(myfun,2000)">Click Timer</button>
+        <button onclick="clearTimeout(s)">Clear Timer</button>
+    <!--<button onclick="setTimeout(myfun,2000)">Click Timer</button> -->
+    <script type="text/javascript">
+        function myfun(){
+            alert("Hello")
+        }
+    </script>
+
+<br><br><br><br>
+    <!-- for set interval & clear interval on button event-->
+        <button onclick="s=setInterval(myfun,2000)">Set interval</button>
+        <button onclick="clearInterval(s)">Clear interval</button>
+    <!--<button onclick="setTimeout(myfun,2000)">Click Timer</button> -->
+    <script type="text/javascript">
+        function myfun(){
+            alert("Hello")
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <h1>Add Element</h1>
+    </div>
+    <button id="btn"> Add</button>
+    <script type="text/javascript">
+        document.getElementById('btn').addEventListener("click",myfun)
+        function myfun(){
+        let para=document.createElement("p");
+        let node=document.createTextNode(" I am a pragraph")
+        para.appendChild(node)
+        document.getElementById("div1").appendChild(para)
+        }
+    </script>
+    
+
+    <div id="div1">
+        <h1>Add Element</h1>
+        <p> This is test</p>
+        <p> This is test 1</p>
+    </div>
+    <button id="btn"> Add</button>
+    <script type="text/javascript">
+        document.getElementById('btn').addEventListener("click",myfun)
+        function myfun(){
+        let para=document.createElement("p");
+        let node=document.createTextNode(" This is new")
+        para.appendChild(node)
+        const parent = documetn.getElementById("div1");
+        const child=document.getElementById("p1")
+        parent.replceChild(para,child);
+        }
+    </script>
+
+    <button id="btn">remove</button>
+    <p id="p1"> Test</p>
+    <script>
+        document.getElementById('btn').addEventListener("click",myfun2);
+        function myfun2(){
+            document.getElementById("p1").remove()
+        }
+    </script>
+    
+
+    <img src="images/pic02.jpg" id="changeimage">
+    <button id="btn1">Change</button>
+    <script type="text/javascript">
+        document.getElementById("btn1").addEventListener("click",myfun3)
+        function myfun3(){
+            //console.log()
+            document.getElementById("changeimage").src="images/2.jpg"
+        }
+
+    </script>
+
+
+</body>
+</html>
