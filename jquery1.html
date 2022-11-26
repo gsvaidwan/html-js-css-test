@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.6.1.js"></script>
+    <style type="text/css">
+        #para{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">click</button>
+    <button class="btn2">show</button>
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ex, vitae dolores ratione necessitatibus
+        corrupti quas porro neque ducimus maxime iusto cumque inventore eligendi amet blanditiis error, ab voluptatibus
+        quo.</p>
+    <script type="text/javascript">
+            // document.getElementById('btn').addEventListener("click",hide);
+            // function hide(){
+            //     document.getElementById('para').style="display:none"
+            // }
+            $(document).ready(function(){
+                $("#btn").click(function(){
+                    $("#para").hide(2000,function(){
+                        alert("hidden")
+                    });
+                });
+            });
+
+            $(".btn2").click(()=>{
+                    $("#para").show(2000,function(){
+                        alert("shown")
+                    });
+                });
+    </script>  
+
+<input type="password" id="pass" />
+<button class="btn3">Show Password</button>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".btn3").click(()=>{
+                if($("#pass").attr("type")=="password")
+            {
+            $("#pass").attr("type","text")
+            $(".btn3").html("Hide Password")
+            }
+                else{
+
+                }
+            });
+        });
+
+    </script>  
+</body>
+
+</html>
